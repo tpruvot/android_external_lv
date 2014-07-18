@@ -37,10 +37,14 @@
 #include <begin.h>
 #include <guess.h>
 
+#ifdef __BIONIC__
+#include <string.h> // strcmp
+#endif
+
 #ifndef MSDOS
 static int isUTF8( byte *str, int length )
 {
-  int i, mode = 0, m2;
+  int i, mode = 0, m2 = 0;
   unsigned long ucs;
   byte ch;
 

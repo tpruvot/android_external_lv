@@ -34,6 +34,10 @@
 #include <begin.h>
 #include <guesslocale.h>
 
+#ifdef __BIONIC__
+#include <ctype.h> // toupper
+#endif
+
 static int strcmp2( char *str1, char *str2 )
 {
   while(1) {
